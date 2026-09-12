@@ -1,0 +1,744 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#062319">
+<title>شركة د. أحمد رضا عبد الله للسياحة | للحج والعمرة وحجوزات الطيران</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --primary:#0d4230;--primary-dark:#062319;--primary-light:#1a6b4f;
+  --gold:#c59b27;--gold-light:#f3cf65;--gold-dark:#8a6813;
+  --bg-cream:#faf9f6;--bg-section:#f4f1ea;--border:#e5e0d7;
+  --text:#1b2621;--muted:#6b7280;--success:#198754;--danger:#dc3545;
+  --radius:16px;--shadow-sm:0 2px 8px rgba(0,0,0,0.04);
+  --shadow-md:0 6px 24px rgba(0,0,0,0.08);--shadow-lg:0 12px 48px rgba(0,0,0,0.12);
+}
+*{box-sizing:border-box;margin:0;padding:0;font-family:'Cairo',sans-serif;-webkit-tap-highlight-color:transparent}
+html{scroll-behavior:smooth}
+body{background:var(--bg-cream);color:var(--text);line-height:1.7;overflow-x:hidden;font-size:15px}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+.icon{width:22px;height:22px;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;fill:none;flex-shrink:0;display:inline-block;vertical-align:middle}
+.reveal{opacity:0;transform:translateY(30px);transition:opacity 0.7s ease,transform 0.7s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+.reveal-delay-1{transition-delay:0.1s}
+.reveal-delay-2{transition-delay:0.2s}
+.reveal-delay-3{transition-delay:0.3s}
+.reveal-delay-4{transition-delay:0.4s}
+
+.top-strip{background:linear-gradient(90deg,var(--gold-dark),var(--gold),var(--gold-dark));color:var(--primary-dark);font-size:12px;font-weight:800;padding:7px 15px;text-align:center;position:relative;z-index:1002}
+
+header{background:rgba(255,255,255,0.97);backdrop-filter:blur(12px);position:sticky;top:0;z-index:1000;border-bottom:1px solid var(--border);box-shadow:var(--shadow-sm)}
+.nav-container{max-width:1240px;margin:0 auto;padding:10px 18px;display:flex;justify-content:space-between;align-items:center;gap:10px}
+.brand-wrap{display:flex;align-items:center;gap:12px}
+.brand-logo-img{width:54px;height:54px;flex-shrink:0;object-fit:contain}
+.brand-name{font-size:15px;font-weight:900;color:var(--primary);line-height:1.2}
+.brand-sub{font-size:10px;font-weight:700;color:var(--gold);letter-spacing:0.4px}
+.nav-actions{display:flex;align-items:center;gap:6px}
+.nav-actions a{padding:8px 14px;border-radius:30px;font-weight:800;font-size:11px;cursor:pointer;white-space:nowrap;display:inline-flex;align-items:center;gap:5px;border:none;color:inherit}
+.nav-cta-btn{background:var(--success);color:#fff !important}
+.admin-login-link{background:var(--primary);color:var(--gold-light) !important;border:1px solid var(--gold) !important}
+
+.hero{position:relative;min-height:75vh;display:flex;align-items:center;justify-content:center;text-align:center;color:#fff;padding:80px 18px;overflow:hidden;background:var(--primary-dark)}
+.hero-bg{position:absolute;inset:0;background:url('images/hero.jpg') center/cover no-repeat;z-index:0}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(6,35,25,0.7) 0%,rgba(6,35,25,0.85) 50%,rgba(6,35,25,0.97) 100%);z-index:1}
+.hero-particles{position:absolute;inset:0;z-index:1;overflow:hidden;pointer-events:none}
+.particle{position:absolute;bottom:-10px;width:3px;height:3px;background:var(--gold-light);border-radius:50%;box-shadow:0 0 8px var(--gold-light);animation:floatUp linear infinite}
+@keyframes floatUp{0%{transform:translateY(0) scale(0);opacity:0}10%{opacity:1}90%{opacity:1}100%{transform:translateY(-90vh) scale(1);opacity:0}}
+.hero-content{position:relative;z-index:2;max-width:760px}
+.hero-badge{display:inline-block;background:rgba(243,207,101,0.12);border:1px solid rgba(197,155,39,0.5);color:var(--gold-light);font-size:11px;font-weight:800;padding:6px 16px;border-radius:30px;margin-bottom:20px}
+.hero h1{font-size:32px;font-weight:900;margin-bottom:18px;line-height:1.3;text-shadow:0 2px 20px rgba(0,0,0,0.5)}
+.hero h1 span{color:var(--gold-light)}
+.hero p{font-size:15px;color:#d8e5df;margin-bottom:30px;max-width:540px;margin-left:auto;margin-right:auto;line-height:1.9}
+.hero-buttons{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+.btn-hero{padding:13px 26px;border-radius:30px;font-weight:800;font-size:14px;display:inline-flex;align-items:center;gap:8px;border:none;cursor:pointer;font-family:'Cairo',sans-serif;color:inherit}
+.btn-hero-primary{background:linear-gradient(135deg,var(--gold),var(--gold-light));color:var(--primary-dark) !important}
+.btn-hero-whatsapp{background:#25D366;color:#fff !important}
+.hero-wave{position:absolute;bottom:-1px;left:0;right:0;z-index:2;line-height:0}
+.hero-wave svg{width:100%;height:50px}
+
+.section-wrap{padding:60px 18px;max-width:1240px;margin:0 auto}
+.section-alt{background:var(--bg-section)}
+.sec-header{text-align:center;margin-bottom:35px}
+.sec-tag{display:inline-block;background:#eef6f2;color:var(--primary-light);font-size:11px;font-weight:800;padding:4px 14px;border-radius:30px;margin-bottom:8px}
+.sec-header h2{font-size:24px;font-weight:900;color:var(--primary);line-height:1.4}
+.sec-header p{font-size:13px;color:var(--muted);margin-top:8px;max-width:520px;margin-left:auto;margin-right:auto}
+
+.services-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.service-card{background:#fff;border-radius:var(--radius);padding:24px 14px;text-align:center;border:1px solid var(--border);box-shadow:var(--shadow-sm);display:block;color:inherit}
+.service-icon-wrap{width:58px;height:58px;border-radius:50%;background:linear-gradient(135deg,#eef6f2,#d9ebe1);display:flex;align-items:center;justify-content:center;margin:0 auto 14px;color:var(--primary-light)}
+.service-icon-wrap svg{width:28px;height:28px}
+.service-card h3{font-size:14px;font-weight:800;color:var(--primary);margin-bottom:5px}
+.service-card p{font-size:11px;color:var(--muted);line-height:1.5}
+
+.gallery-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.gallery-item{background:#fff;border-radius:var(--radius);overflow:hidden;border:1px solid var(--border);box-shadow:var(--shadow-sm)}
+.gallery-item img{width:100%;height:170px;object-fit:cover}
+.gallery-info{padding:11px 13px}
+.gallery-info h4{font-size:12px;font-weight:800;color:var(--primary);line-height:1.4}
+
+.packages-grid{display:grid;grid-template-columns:1fr;gap:18px}
+.package-card{background:#fff;border-radius:var(--radius);border:2px solid var(--gold);overflow:hidden;position:relative;box-shadow:var(--shadow-md);display:flex;flex-direction:column}
+.pack-top-banner{width:100%;height:190px;background:#f8f9fa;position:relative;overflow:hidden}
+.pack-top-banner img{width:100%;height:100%;object-fit:cover}
+.pack-badge{position:absolute;top:12px;left:12px;background:linear-gradient(135deg,var(--gold),var(--gold-light));color:var(--primary-dark);font-size:11px;font-weight:900;padding:5px 12px;border-radius:20px;z-index:2}
+.pack-head{padding:14px 16px;text-align:center;border-bottom:1px solid var(--border)}
+.pack-head h3{font-size:17px;font-weight:800;color:var(--primary);margin-bottom:6px}
+.pack-price{display:inline-block;font-size:14px;font-weight:800;color:#157347;background:#e8f7ee;padding:4px 12px;border-radius:8px}
+.pack-features{list-style:none;padding:14px 16px;flex-grow:1}
+.pack-features li{padding:7px 0;border-bottom:1px dashed #edf2ef;font-size:13px;color:#444;display:flex;align-items:flex-start;gap:8px}
+.pack-features li:last-child{border-bottom:none}
+.pack-features li svg{color:var(--success);flex-shrink:0;margin-top:3px;width:16px;height:16px}
+.pack-footer{padding:14px 16px 16px}
+.btn-pack{width:100%;background:var(--success);color:#fff !important;padding:12px;border-radius:8px;font-weight:800;font-size:14px;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px;font-family:'Cairo',sans-serif}
+.btn-delete{width:100%;margin-top:8px;background:#fff;color:var(--danger);border:1px solid var(--danger);padding:9px;border-radius:8px;font-weight:800;font-size:13px;cursor:pointer;font-family:'Cairo',sans-serif;display:flex;align-items:center;justify-content:center;gap:6px}
+
+.skeleton{background:linear-gradient(90deg,#f0f0f0 25%,#e0e0e0 50%,#f0f0f0 75%);background-size:200% 100%;animation:shimmer 1.5s infinite;border-radius:8px}
+@keyframes shimmer{0%{background-position:200% 0}100%{background-position:-200% 0}}
+.skeleton-card{background:#fff;border-radius:var(--radius);border:2px solid var(--border);overflow:hidden}
+.skeleton-img{width:100%;height:190px}
+.skeleton-line{height:14px;margin:12px 16px;border-radius:6px}
+
+.inquiry-grid{display:grid;grid-template-columns:1fr;gap:10px;max-width:620px;margin:0 auto}
+.inquiry-btn{display:flex;align-items:center;gap:12px;background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:14px 16px;box-shadow:var(--shadow-sm);color:inherit}
+.inquiry-icon{width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,#e8f7ee,#d4ede0);display:flex;align-items:center;justify-content:center;color:var(--success);flex-shrink:0}
+.inquiry-icon svg{width:20px;height:20px}
+.inquiry-text{flex:1;text-align:right}
+.inquiry-text h4{font-size:14px;font-weight:800;color:var(--primary);margin-bottom:2px}
+.inquiry-text p{font-size:11px;color:var(--muted)}
+.inquiry-arrow{color:var(--success);flex-shrink:0}
+.inquiry-arrow svg{width:18px;height:18px}
+
+footer{background:linear-gradient(180deg,var(--primary-light),var(--primary-dark));color:#cfd9d4;padding:50px 18px 25px;text-align:center}
+.footer-logo{display:flex;justify-content:center;margin-bottom:14px}
+.footer-logo img{width:80px;height:80px;object-fit:contain}
+.footer-brand{font-size:18px;font-weight:900;color:#fff;margin-bottom:4px}
+.footer-sub{font-size:12px;color:var(--gold-light);margin-bottom:24px}
+.footer-contact{display:flex;flex-direction:column;gap:10px;margin-bottom:25px;font-size:13px}
+.footer-contact a{color:#cfd9d4;display:inline-flex;align-items:center;justify-content:center;gap:8px}
+.footer-contact svg{width:16px;height:16px}
+.footer-divider{height:1px;background:rgba(255,255,255,0.1);margin:20px auto;max-width:300px}
+.footer-copy{font-size:11px;color:#8fa39a}
+
+.whatsapp-float{position:fixed;bottom:20px;left:20px;width:58px;height:58px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 25px rgba(37,211,102,0.55);z-index:999;color:#fff !important}
+.whatsapp-float svg{width:30px;height:30px}
+
+.modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.8);z-index:2000;display:none;align-items:center;justify-content:center;padding:15px;backdrop-filter:blur(4px)}
+.modal-overlay.active{display:flex}
+.modal-box{background:#fff;border-radius:var(--radius);width:100%;max-width:460px;padding:26px 20px;position:relative;max-height:90vh;overflow-y:auto}
+.modal-close{position:absolute;top:12px;left:12px;background:#f0f0f0;border:none;width:34px;height:34px;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;color:#555}
+.modal-close svg{width:18px;height:18px}
+.modal-title{font-size:18px;font-weight:900;color:var(--primary);margin-bottom:6px;text-align:center}
+.modal-sub{font-size:13px;color:var(--muted);text-align:center;margin-bottom:20px}
+.form-label{font-size:12px;font-weight:800;color:var(--primary);margin-bottom:5px;display:block}
+.form-control-input{width:100%;padding:11px 14px;border-radius:8px;border:1px solid #ddd;margin-bottom:12px;font-family:'Cairo',sans-serif;font-size:14px;background:#fafafa;color:var(--text)}
+.form-control-input:focus{outline:none;border-color:var(--gold);background:#fff}
+textarea.form-control-input{resize:vertical;min-height:80px}
+.btn-submit{width:100%;background:var(--primary);color:#fff;padding:13px;border:none;border-radius:8px;font-weight:900;font-size:15px;cursor:pointer;font-family:'Cairo',sans-serif;display:flex;align-items:center;justify-content:center;gap:8px}
+.btn-submit:disabled{opacity:0.6;cursor:not-allowed}
+#loadingSpinner{text-align:center;font-weight:700;color:var(--success);display:none;margin-top:12px;font-size:13px}
+#adminControlsBar{display:none;margin-top:15px;text-align:center}
+.btn-add-offer{background:linear-gradient(135deg,var(--success),#146c43);color:#fff;border:none;padding:13px 26px;border-radius:30px;font-weight:900;font-size:14px;cursor:pointer;font-family:'Cairo',sans-serif;display:inline-flex;align-items:center;gap:8px}
+.empty-state{text-align:center;padding:40px 20px;color:var(--muted);font-size:14px;grid-column:1/-1}
+.empty-state svg{width:48px;height:48px;color:#ccc;margin:0 auto 12px}
+
+@media(min-width:640px){
+  .services-grid{grid-template-columns:repeat(4,1fr)}
+  .gallery-grid{grid-template-columns:repeat(2,1fr)}
+  .packages-grid{grid-template-columns:repeat(2,1fr)}
+  .inquiry-grid{grid-template-columns:repeat(2,1fr)}
+  .hero h1{font-size:40px}
+  .sec-header h2{font-size:28px}
+}
+@media(min-width:1024px){
+  body{font-size:16px}
+  .gallery-grid{grid-template-columns:repeat(4,1fr)}
+  .packages-grid{grid-template-columns:repeat(3,1fr)}
+  .hero{min-height:80vh;padding:110px 20px}
+  .hero h1{font-size:52px}
+  .hero p{font-size:17px}
+  .nav-actions a{font-size:13px;padding:9px 18px}
+  .brand-name{font-size:18px}
+  .brand-logo-img{width:64px;height:64px}
+  .section-wrap{padding:80px 20px}
+  .gallery-item img{height:220px}
+  .pack-top-banner{height:220px}
+}
+</style>
+</head><body>
+
+<svg style="display:none" xmlns="http://www.w3.org/2000/svg">
+  <symbol id="i-whatsapp" viewBox="0 0 24 24"><path fill="currentColor" stroke="none" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></symbol>
+  <symbol id="i-plane" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z"/></symbol>
+  <symbol id="i-kaaba" viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="5" y="6" width="14" height="16" rx="1"/><path d="M5 11h14"/><path d="M11 16h2v6h-2z"/><path d="M12 2v4"/><circle cx="12" cy="4" r="1"/></symbol>
+  <symbol id="i-mosque" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M12 2c-.5 1.5-2 2-2 4 0 1 .5 1.5 1 2h2c.5-.5 1-1 1-2 0-2-1.5-2.5-2-4z"/><path d="M4 22V10c0-1 .5-2 2-2h12c1.5 0 2 1 2 2v12"/><path d="M2 22h20"/><path d="M9 22v-6a3 3 0 0 1 6 0v6"/></symbol>
+  <symbol id="i-clipboard" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect x="8" y="2" width="8" height="4" rx="1"/><path d="M9 12h6"/><path d="M9 16h6"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="20 6 9 17 4 12"/></symbol>
+  <symbol id="i-arrow-left" viewBox="0 0 24 24" fill="none" stroke="currentColor"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></symbol>
+  <symbol id="i-close" viewBox="0 0 24 24" fill="none" stroke="currentColor"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></symbol>
+  <symbol id="i-lock" viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></symbol>
+  <symbol id="i-plus" viewBox="0 0 24 24" fill="none" stroke="currentColor"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></symbol>
+  <symbol id="i-trash" viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></symbol>
+  <symbol id="i-phone" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></symbol>
+  <symbol id="i-map" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></symbol>
+</svg>
+
+<div class="top-strip">شركة د. أحمد رضا عبد الله للسياحة | فرع بيلا - حاذق</div>
+
+<header id="mainHeader">
+  <div class="nav-container">
+    <div class="brand-wrap">
+      <img src="images/logo.png" alt="شعار شركة مكة للسياحة" class="brand-logo-img">
+      <div>
+        <div class="brand-name">شركة د. أحمد رضا</div>
+        <div class="brand-sub">للحج والعمرة والطيران</div>
+      </div>
+    </div>
+    <div class="nav-actions">
+      <a onclick="openLoginModal()" class="admin-login-link">
+        <svg class="icon" style="width:14px;height:14px" viewBox="0 0 24 24"><use href="#i-lock"/></svg>
+        إدارة
+      </a>
+      <a href="#packages" class="nav-cta-btn">العروض</a>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-particles" id="particles"></div>
+  <div class="hero-content">
+    <div class="hero-badge">خدمة ضيوف الرحمن منذ سنوات</div>
+    <h1>رحلتك إلى <span>أطهر البقاع</span><br>تبدأ معنا</h1>
+    <p>أمانة ومصداقية وإشراف كامل من د. أحمد رضا عبد الله وفريقه، لخدمة ضيوف الرحمن في الحج والعمرة وحجوزات الطيران.</p>
+    <div class="hero-buttons">
+      <a href="#packages" class="btn-hero btn-hero-primary">
+        <svg class="icon" style="width:18px;height:18px" viewBox="0 0 24 24"><use href="#i-kaaba"/></svg>
+        احجز رحلتك الآن
+      </a>
+      <a href="https://wa.me/201000846726?text=السلام%20عليكم،%20أرغب%20في%20الاستفسار%20عن%20رحلات%20الحج%20والعمرة." target="_blank" class="btn-hero btn-hero-whatsapp">
+        <svg class="icon" style="width:18px;height:18px" viewBox="0 0 24 24"><use href="#i-whatsapp"/></svg>
+        تواصل واتساب
+      </a>
+    </div>
+  </div>
+  <div class="hero-wave">
+    <svg viewBox="0 0 1440 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0,30 C240,60 480,0 720,30 C960,60 1200,0 1440,30 L1440,60 L0,60 Z" fill="#faf9f6"/>
+    </svg>
+  </div>
+</section>
+
+<section class="section-wrap">
+  <div class="sec-header reveal">
+    <span class="sec-tag">خدماتنا</span>
+    <h2>كل ما تحتاجه في مكان واحد</h2>
+    <p>باقة متكاملة من خدمات الحج والعمرة والطيران</p>
+  </div>
+  <div class="services-grid">
+    <a href="https://wa.me/201000846726?text=السلام%20عليكم،%20أرغب%20في%20معرفة%20أقرب%20رحلة%20عمرة%20متاحة." target="_blank" class="service-card reveal reveal-delay-1">
+      <div class="service-icon-wrap"><svg viewBox="0 0 24 24"><use href="#i-kaaba"/></svg></div>
+      <h3>رحلات العمرة</h3><p>برامج عمرة متكاملة طوال العام</p>
+    </a>
+    <a href="https://wa.me/201000846726?text=السلام%20عليكم،%20أرغب%20في%20الاستفسار%20عن%20حجز%20الحج%20الخاص%20بي." target="_blank" class="service-card reveal reveal-delay-2">
+      <div class="service-icon-wrap"><svg viewBox="0 0 24 24"><use href="#i-mosque"/></svg></div>
+      <h3>برامج الحج</h3><p>حج مسبق ومستوى مميز</p>
+    </a>
+    <a href="https://wa.me/201000846726?text=السلام%20عليكم،%20أرغب%20في%20الاستفسار%20عن%20حجز%20طيران." target="_blank" class="service-card reveal reveal-delay-3">
+      <div class="service-icon-wrap"><svg viewBox="0 0 24 24"><use href="#i-plane"/></svg></div>
+      <h3>حجوزات الطيران</h3><p>أفضل الأسعار لجميع الوجهات</p>
+    </a>
+    <a href="https://wa.me/201000846726?text=السلام%20عليكم،%20أرغب%20في%20متابعة%20حجزي%20السابق." target="_blank" class="service-card reveal reveal-delay-4">
+      <div class="service-icon-wrap"><svg viewBox="0 0 24 24"><use href="#i-clipboard"/></svg></div>
+      <h3>متابعة الحجز</h3><p>استفسر عن حالة حجزك السابق</p>
+    </a>
+  </div>
+</section>
+
+<section class="section-wrap section-alt">
+  <div class="sec-header reveal">
+    <span class="sec-tag">مقر الشركة</span>
+    <h2>معرض صور مقر واستقبال الشركة</h2>
+    <p>فرع بيلا - حاذق - كفر الشيخ</p>
+  </div>
+  <div class="gallery-grid">
+    <div class="gallery-item reveal reveal-delay-1"><img src="images/office1.jpg" alt="لافتة الشركة" loading="lazy"><div class="gallery-info"><h4>لافتة الشركة بالشارع</h4></div></div>
+    <div class="gallery-item reveal reveal-delay-2"><img src="images/office2.jpg" alt="اليافطة الرسمية" loading="lazy"><div class="gallery-info"><h4>اليافطة الرسمية للمقر</h4></div></div>
+    <div class="gallery-item reveal reveal-delay-3"><img src="images/office3.jpg" alt="مقر الشركة" loading="lazy"><div class="gallery-info"><h4>مقر الشركة الرئيسي</h4></div></div>
+    <div class="gallery-item reveal reveal-delay-4"><img src="images/office_entrance.jpg" alt="دخلة الشركة" loading="lazy"><div class="gallery-info"><h4>دخلة وواجهة الشركة</h4></div></div>
+  </div>
+</section>
+
+<section class="section-wrap">
+  <div class="sec-header reveal">
+    <span class="sec-tag">لحظات حقيقية</span>
+    <h2>أفواجنا وخدماتنا في الأراضي المقدسة</h2>
+    <p>صور حقيقية من رحلات سابقة بإشراف د. أحمد رضا</p>
+  </div>
+  <div class="gallery-grid">
+    <div class="gallery-item reveal reveal-delay-1"><img src="images/trip1.jpg" alt="أفواجنا في الحرم" loading="lazy"><div class="gallery-info"><h4>أفواجنا في الحرم المكي</h4></div></div>
+    <div class="gallery-item reveal reveal-delay-2"><img src="images/trip2.jpg" alt="استقبال الضيوف" loading="lazy"><div class="gallery-info"><h4>استقبال ضيوفنا بالفنادق</h4></div></div>
+    <div class="gallery-item reveal reveal-delay-3"><img src="images/trip3.jpg" alt="الباص المكيف" loading="lazy"><div class="gallery-info"><h4>أفواجنا في الباصات المكيفة</h4></div></div>
+    <div class="gallery-item reveal reveal-delay-4"><img src="images/trip4.jpg" alt="إشراف دائم" loading="lazy"><div class="gallery-info"><h4>إشراف دائم طوال المناسك</h4></div></div>
+    <div class="gallery-item reveal reveal-delay-1"><img src="images/rawabi.jpg" alt="فندق روابي الزهراء" loading="lazy"><div class="gallery-info"><h4>فندق روابي الزهراء</h4></div></div>
+    <div class="gallery-item reveal reveal-delay-2"><img src="images/hotel_lounge.jpg" alt="غرفة الفندق" loading="lazy"><div class="gallery-info"><h4>غرف فندقية مميزة</h4></div></div>
+    <div class="gallery-item reveal reveal-delay-3"><img src="images/haram_plaza.jpg" alt="بعد الطواف" loading="lazy"><div class="gallery-info"><h4>ضيوفنا بعد الطواف</h4></div></div>
+    <div class="gallery-item reveal reveal-delay-4"><img src="images/kiswa.jpg" alt="كسوة الكعبة" loading="lazy"><div class="gallery-info"><h4>كسوة الكعبة المشرفة</h4></div></div>
+  </div>
+</section>
+
+<section class="section-wrap section-alt" id="packages">
+  <div class="sec-header reveal">
+    <span class="sec-tag">الرحلات المتاحة</span>
+    <h2>برامج وعروض الحج والعمرة</h2>
+    <p>اختر العرض المناسب وتواصل معنا مباشرة</p>
+    <div id="adminControlsBar">
+      <button onclick="openAddPackageModal()" class="btn-add-offer">
+        <svg class="icon" style="width:16px;height:16px" viewBox="0 0 24 24"><use href="#i-plus"/></svg>
+        إضافة عرض جديد
+      </button>
+    </div>
+  </div>
+  <div class="packages-grid" id="packagesContainer">
+    <div class="skeleton-card"><div class="skeleton skeleton-img"></div><div class="skeleton skeleton-line" style="width:60%"></div><div class="skeleton skeleton-line" style="width:40%"></div></div>
+    <div class="skeleton-card"><div class="skeleton skeleton-img"></div><div class="skeleton skeleton-line" style="width:60%"></div><div class="skeleton skeleton-line" style="width:40%"></div></div>
+    <div class="skeleton-card"><div class="skeleton skeleton-img"></div><div class="skeleton skeleton-line" style="width:60%"></div><div class="skeleton skeleton-line" style="width:40%"></div></div>
+  </div>
+</section>
+
+<section class="section-wrap">
+  <div class="sec-header reveal">
+    <span class="sec-tag">تواصل مباشر</span>
+    <h2>استفسارات سريعة عبر واتساب</h2>
+    <p>اختر نوع الاستفسار وسنرد عليك فورًا</p>
+  </div>
+  <div class="inquiry-grid">
+    <a href="https://wa.me/201000846726?text=السلام%20عليكم،%20أرغب%20في%20الاستفسار%20عن%20حجز%20طيران." target="_blank" class="inquiry-btn reveal reveal-delay-1">
+      <div class="inquiry-icon"><svg viewBox="0 0 24 24"><use href="#i-plane"/></svg></div>
+      <div class="inquiry-text"><h4>استفسار عن حجز طيران</h4><p>احجز تذكرتك بأفضل سعر</p></div>
+      <div class="inquiry-arrow"><svg viewBox="0 0 24 24"><use href="#i-arrow-left"/></svg></div>
+    </a>
+    <a href="https://wa.me/201000846726?text=السلام%20عليكم،%20أرغب%20في%20الاستفسار%20عن%20حجز%20الحج%20الخاص%20بي." target="_blank" class="inquiry-btn reveal reveal-delay-2">
+      <div class="inquiry-icon"><svg viewBox="0 0 24 24"><use href="#i-mosque"/></svg></div>
+      <div class="inquiry-text"><h4>استفسار عن حجز حج مسبق</h4><p>برامج حج مسبق مميزة</p></div>
+      <div class="inquiry-arrow"><svg viewBox="0 0 24 24"><use href="#i-arrow-left"/></svg></div>
+    </a>
+    <a href="https://wa.me/201000846726?text=السلام%20عليكم،%20أرغب%20في%20معرفة%20أقرب%20رحلة%20عمرة%20متاحة." target="_blank" class="inquiry-btn reveal reveal-delay-3">
+      <div class="inquiry-icon"><svg viewBox="0 0 24 24"><use href="#i-kaaba"/></svg></div>
+      <div class="inquiry-text"><h4>استفسار عن أقرب رحلة عمرة</h4><p>اعرف مواعيد الرحلات القادمة</p></div>
+      <div class="inquiry-arrow"><svg viewBox="0 0 24 24"><use href="#i-arrow-left"/></svg></div>
+    </a>
+    <a href="https://wa.me/201000846726?text=السلام%20عليكم،%20أرغب%20في%20متابعة%20حجزي%20السابق." target="_blank" class="inquiry-btn reveal reveal-delay-4">
+      <div class="inquiry-icon"><svg viewBox="0 0 24 24"><use href="#i-clipboard"/></svg></div>
+      <div class="inquiry-text"><h4>متابعة حجز سابق</h4><p>استفسر عن حالة حجزك</p></div>
+      <div class="inquiry-arrow"><svg viewBox="0 0 24 24"><use href="#i-arrow-left"/></svg></div>
+    </a>
+  </div>
+</section><footer>
+  <div class="footer-logo"><img src="images/logo.png" alt="شعار شركة مكة للسياحة"></div>
+  <div class="footer-brand">شركة د. أحمد رضا عبد الله</div>
+  <div class="footer-sub">للحج والعمرة وحجوزات الطيران</div>
+  <div class="footer-contact">
+    <a href="tel:+201000846726"><svg viewBox="0 0 24 24"><use href="#i-phone"/></svg> +20 100 084 6726</a>
+    <a href="https://wa.me/201000846726" target="_blank"><svg viewBox="0 0 24 24"><use href="#i-whatsapp"/></svg> واتساب مباشر</a>
+    <span style="display:inline-flex;align-items:center;justify-content:center;gap:8px"><svg viewBox="0 0 24 24"><use href="#i-map"/></svg> فرع بيلا - حاذق - كفر الشيخ</span>
+  </div>
+  <div class="footer-divider"></div>
+  <div class="footer-copy">جميع الحقوق محفوظة © <span id="year"></span> شركة د. أحمد رضا عبد الله للسياحة</div>
+</footer>
+
+<a href="https://wa.me/201000846726?text=السلام%20عليكم،%20أرغب%20في%20الاستفسار%20عن%20خدمات%20الحج%20والعمرة." target="_blank" class="whatsapp-float" aria-label="تواصل واتساب">
+  <svg viewBox="0 0 24 24"><use href="#i-whatsapp"/></svg>
+</a>
+
+<div id="loginModal" class="modal-overlay">
+  <div class="modal-box" style="text-align:center">
+    <button class="modal-close" onclick="closeModals()"><svg viewBox="0 0 24 24"><use href="#i-close"/></svg></button>
+    <h3 class="modal-title">أهلاً دكتور أحمد</h3>
+    <p class="modal-sub">برجاء إدخال بيانات الدخول للوصول للوحة التحكم</p>
+    <form onsubmit="handleAdminLogin(event)">
+      <label class="form-label">البريد الإلكتروني</label>
+      <input type="email" id="adminEmail" class="form-control-input" placeholder="admin@example.com" required autocomplete="email">
+      <label class="form-label">كلمة السر</label>
+      <input type="password" id="adminPass" class="form-control-input" placeholder="كلمة السر" required autocomplete="current-password">
+      <button type="submit" id="loginBtn" class="btn-submit">تسجيل الدخول</button>
+      <div id="loginError" style="color:var(--danger);font-size:12px;margin-top:10px;display:none"></div>
+    </form>
+  </div>
+</div>
+
+<div id="packageModal" class="modal-overlay">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModals()"><svg viewBox="0 0 24 24"><use href="#i-close"/></svg></button>
+    <h3 class="modal-title">إضافة عرض جديد</h3>
+    <p class="modal-sub">سيظهر العرض فورًا لجميع الزوار</p>
+    <form onsubmit="saveCloudPackage(event)">
+      <label class="form-label">اسم العرض</label>
+      <input type="text" id="pkgTitle" class="form-control-input" placeholder="مثال: عمرة رمضان" required>
+      <label class="form-label">الشارة المميزة</label>
+      <input type="text" id="pkgBadge" class="form-control-input" placeholder="مثال: 5 نجوم / الأكثر طلبًا" required>
+      <label class="form-label">السعر</label>
+      <input type="text" id="pkgPrice" class="form-control-input" placeholder="مثال: 18,500 جنيه" required>
+      <label class="form-label">القسم</label>
+      <select id="pkgCategory" class="form-control-input" required>
+        <option value="umrah">عمرة</option>
+        <option value="hajj">حج</option>
+        <option value="flight">طيران</option>
+      </select>
+      <label class="form-label">موعد الرحلة (اختياري)</label>
+      <input type="text" id="pkgTravelDate" class="form-control-input" placeholder="مثال: 15 رمضان 1447">
+      <label class="form-label">الوصف (اختياري)</label>
+      <textarea id="pkgDescription" class="form-control-input" rows="2" placeholder="وصف مختصر للعرض"></textarea>
+      <label class="form-label">المميزات (افصل بينها بشرطة -)</label>
+      <textarea id="pkgFeatures" class="form-control-input" rows="3" placeholder="فندق 5 نجوم - باصات مكيفة - إشراف كامل" required></textarea>
+      <label class="form-label">صورة العرض</label>
+      <input type="file" id="pkgImageFile" class="form-control-input" accept="image/*" required>
+      <button type="submit" id="saveBtn" class="btn-submit">حفظ ونشر العرض فورًا</button>
+      <div id="loadingSpinner">جاري رفع الصورة...</div>
+    </form>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<script>
+// ============ Supabase Setup ============
+const SUPABASE_URL = 'https://wqoyvwaluqzdgnallpdb.supabase.co';
+const SUPABASE_KEY = 'sb_publishable_fDFI6y_9GJnAWrsRbiNBwQ_-K5Iqb4a';
+const db = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+
+let packages = [];
+let compressedImageBlob = null;
+let currentUser = null;
+
+// ============ Reveal ============
+function setupReveal() {
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.05 });
+  reveals.forEach(el => observer.observe(el));
+}
+
+// ============ Particles ============
+function createParticles() {
+  const container = document.getElementById('particles');
+  if (!container) return;
+  for (let i = 0; i < 20; i++) {
+    const p = document.createElement('div');
+    p.className = 'particle';
+    p.style.left = Math.random() * 100 + '%';
+    p.style.animationDuration = (8 + Math.random() * 12) + 's';
+    p.style.animationDelay = Math.random() * 10 + 's';
+    p.style.opacity = 0.3 + Math.random() * 0.5;
+    const size = 2 + Math.random() * 3;
+    p.style.width = size + 'px';
+    p.style.height = size + 'px';
+    container.appendChild(p);
+  }
+}
+
+// ============ Header Scroll ============
+window.addEventListener('scroll', () => {
+  const header = document.getElementById('mainHeader');
+  if (header) {
+    if (window.scrollY > 20) header.classList.add('scrolled');
+    else header.classList.remove('scrolled');
+  }
+});
+
+// ============ Auth ============
+async function checkAuth() {
+  try {
+    const { data: { session } } = await db.auth.getSession();
+    if (session) {
+      currentUser = session.user;
+      updateAdminUI();
+    }
+  } catch (err) {
+    console.error('Auth check error:', err);
+  }
+}
+
+function updateAdminUI() {
+  const bar = document.getElementById('adminControlsBar');
+  if (bar) bar.style.display = currentUser ? 'block' : 'none';
+}
+
+async function handleAdminLogin(e) {
+  e.preventDefault();
+  const email = document.getElementById('adminEmail').value.trim();
+  const password = document.getElementById('adminPass').value;
+  const errorDiv = document.getElementById('loginError');
+  const btn = document.getElementById('loginBtn');
+
+  errorDiv.style.display = 'none';
+  btn.disabled = true;
+  btn.textContent = 'جاري التحقق...';
+
+  try {
+    const { data, error } = await db.auth.signInWithPassword({ email, password });
+    if (error) throw error;
+    currentUser = data.user;
+    closeModals();
+    renderPackages();
+    updateAdminUI();
+    alert('مرحبًا دكتور أحمد! تم تسجيل الدخول بنجاح.');
+  } catch (err) {
+    errorDiv.textContent = 'بيانات الدخول غير صحيحة. تأكد من الإيميل وكلمة السر.';
+    errorDiv.style.display = 'block';
+  } finally {
+    btn.disabled = false;
+    btn.textContent = 'تسجيل الدخول';
+  }
+}
+
+async function handleLogout() {
+  if (!confirm('هل تريد تسجيل الخروج؟')) return;
+  await db.auth.signOut();
+  currentUser = null;
+  renderPackages();
+  updateAdminUI();
+}
+
+function openLoginModal() {
+  if (currentUser) {
+    handleLogout();
+  } else {
+    document.getElementById('adminEmail').value = '';
+    document.getElementById('adminPass').value = '';
+    document.getElementById('loginError').style.display = 'none';
+    document.getElementById('loginModal').classList.add('active');
+  }
+}
+
+function closeModals() {
+  document.getElementById('loginModal').classList.remove('active');
+  document.getElementById('packageModal').classList.remove('active');
+}
+
+// ============ Load Packages ============
+async function loadPackages() {
+  try {
+    const { data, error } = await db
+      .from('offers')
+      .select('*')
+      .order('created_at', { ascending: false });
+
+    if (error) throw error;
+    packages = data || [];
+    renderPackages();
+  } catch (err) {
+    console.error('Fetch error:', err);
+    document.getElementById('packagesContainer').innerHTML = `
+      <div class="empty-state">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="5" y="6" width="14" height="16" rx="1"/><path d="M5 11h14"/></svg>
+        <p>لا توجد عروض مضافة حاليًا.</p>
+        <p style="font-size:12px;margin-top:6px">تابعنا قريبًا لمعرفة أحدث العروض.</p>
+      </div>`;
+  }
+}
+
+// ============ Render Packages ============
+function renderPackages() {
+  const container = document.getElementById('packagesContainer');
+  container.innerHTML = '';
+
+  if (packages.length === 0) {
+    container.innerHTML = `<div class="empty-state">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="5" y="6" width="14" height="16" rx="1"/><path d="M5 11h14"/></svg>
+      <p>لا توجد عروض مضافة حاليًا.</p>
+      <p style="font-size:12px;margin-top:6px">تابعنا قريبًا لمعرفة أحدث العروض.</p>
+    </div>`;
+    updateAdminUI();
+    return;
+  }
+
+  packages.forEach((pkg) => {
+    const feats = (pkg.features || '').split('-').map(f => f.trim()).filter(f => f);
+    const featsList = feats.map(f => `<li><svg viewBox="0 0 24 24"><use href="#i-check"/></svg><span>${f}</span></li>`).join('');
+    const deleteBtn = currentUser ? `<button onclick="deletePackage('${pkg.id}')" class="btn-delete">
+      <svg class="icon" style="width:14px;height:14px" viewBox="0 0 24 24"><use href="#i-trash"/></svg>
+      حذف العرض
+    </button>` : '';
+
+    const card = document.createElement('div');
+    card.className = 'package-card';
+    card.innerHTML = `
+      <span class="pack-badge">${pkg.badge || ''}</span>
+      <div class="pack-top-banner"><img src="${pkg.image_url}" alt="${pkg.title}" loading="lazy"></div>
+      <div class="pack-head">
+        <h3>${pkg.title}</h3>
+        <div class="pack-price">${pkg.price || 'تواصل للاستعلام'}</div>
+      </div>
+      <ul class="pack-features">${featsList}</ul>
+      <div class="pack-footer">
+        <a href="https://wa.me/201000846726?text=${encodeURIComponent('السلام عليكم، أرغب في الاستفسار عن ' + pkg.title)}" target="_blank" class="btn-pack">
+          <svg class="icon" style="width:18px;height:18px" viewBox="0 0 24 24"><use href="#i-whatsapp"/></svg>
+          تواصل للحجز والاستعلام
+        </a>
+        ${deleteBtn}
+      </div>
+    `;
+    container.appendChild(card);
+  });
+
+  updateAdminUI();
+}
+
+// ============ Add Package ============
+function openAddPackageModal() {
+  document.getElementById('pkgTitle').value = '';
+  document.getElementById('pkgBadge').value = '';
+  document.getElementById('pkgPrice').value = '';
+  document.getElementById('pkgTravelDate').value = '';
+  document.getElementById('pkgDescription').value = '';
+  document.getElementById('pkgFeatures').value = '';
+  document.getElementById('pkgImageFile').value = '';
+  document.getElementById('pkgCategory').value = 'umrah';
+  compressedImageBlob = null;
+  document.getElementById('packageModal').classList.add('active');
+}
+
+document.getElementById('pkgImageFile').addEventListener('change', function(e) {
+  const file = e.target.files[0];
+  if (!file) return;
+
+  const reader = new FileReader();
+  reader.onload = function(event) {
+    const img = new Image();
+    img.onload = function() {
+      const canvas = document.createElement('canvas');
+      const MAX_WIDTH = 1200;
+      const scaleSize = Math.min(1, MAX_WIDTH / img.width);
+      canvas.width = img.width * scaleSize;
+      canvas.height = img.height * scaleSize;
+      const ctx = canvas.getContext('2d');
+      ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+      canvas.toBlob(function(blob) {
+        compressedImageBlob = blob;
+      }, 'image/jpeg', 0.85);
+    };
+    img.src = event.target.result;
+  };
+  reader.readAsDataURL(file);
+});
+
+async function saveCloudPackage(e) {
+  e.preventDefault();
+
+  if (!currentUser) {
+    alert('لازم تسجل دخول الأول.');
+    return;
+  }
+
+  if (!compressedImageBlob) {
+    alert('برجاء انتظار ثانية حتى يتم تجهيز الصورة.');
+    return;
+  }
+
+  document.getElementById('saveBtn').style.display = 'none';
+  document.getElementById('loadingSpinner').style.display = 'block';
+
+  try {
+    const fileName = `offer_${Date.now()}_${Math.random().toString(36).substr(2, 9)}.jpg`;
+    const { error: uploadError } = await db.storage
+      .from('offers-images')
+      .upload(fileName, compressedImageBlob, {
+        contentType: 'image/jpeg',
+        cacheControl: '3600',
+        upsert: false
+      });
+
+    if (uploadError) throw uploadError;
+
+    const { data: { publicUrl } } = db.storage
+      .from('offers-images')
+      .getPublicUrl(fileName);
+
+    const newOffer = {
+      title: document.getElementById('pkgTitle').value.trim(),
+      badge: document.getElementById('pkgBadge').value.trim(),
+      price: document.getElementById('pkgPrice').value.trim(),
+      category: document.getElementById('pkgCategory').value,
+      travel_date: document.getElementById('pkgTravelDate').value.trim() || null,
+      description: document.getElementById('pkgDescription').value.trim() || null,
+      features: document.getElementById('pkgFeatures').value.trim(),
+      image_url: publicUrl,
+      is_active: true,
+      sort_order: 0
+    };
+
+    const { error: insertError } = await db.from('offers').insert([newOffer]);
+    if (insertError) throw insertError;
+
+    document.getElementById('saveBtn').style.display = 'flex';
+    document.getElementById('loadingSpinner').style.display = 'none';
+    closeModals();
+    await loadPackages();
+    alert('تم رفع العرض بنجاح!');
+  } catch (err) {
+    console.error('Save error:', err);
+    alert('حدث خطأ أثناء الحفظ: ' + (err.message || 'حاول مرة أخرى'));
+    document.getElementById('saveBtn').style.display = 'flex';
+    document.getElementById('loadingSpinner').style.display = 'none';
+  }
+}
+
+// ============ Delete Package ============
+async function deletePackage(id) {
+  if (!confirm('هل أنت متأكد من حذف هذا العرض؟')) return;
+
+  try {
+    const pkg = packages.find(p => p.id === id);
+    const { error } = await db.from('offers').delete().eq('id', id);
+    if (error) throw error;
+
+    if (pkg && pkg.image_url) {
+      const fileName = pkg.image_url.split('/').pop();
+      await db.storage.from('offers-images').remove([fileName]);
+    }
+
+    await loadPackages();
+    alert('تم حذف العرض بنجاح.');
+  } catch (err) {
+    console.error('Delete error:', err);
+    alert('حدث خطأ أثناء الحذف: ' + (err.message || 'حاول مرة أخرى'));
+  }
+}
+
+// ============ Init ============
+document.getElementById('year').textContent = new Date().getFullYear();
+
+document.querySelectorAll('.modal-overlay').forEach(overlay => {
+  overlay.addEventListener('click', function(e) {
+    if (e.target === this) closeModals();
+  });
+});
+
+window.addEventListener('load', function() {
+  setupReveal();
+  createParticles();
+  checkAuth();
+  loadPackages();
+});
+
+// احتياطي: فعّل العناصر لو الـ Reveal مشتغلش
+setTimeout(function() {
+  document.querySelectorAll('.reveal:not(.visible)').forEach(function(el) {
+    el.classList.add('visible');
+  });
+}, 2500);
+</script>
+</body>
+</html>
